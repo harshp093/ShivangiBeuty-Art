@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Gallery | Shivangi's Beauty Art & Hair — Hair, Bridal & Beauty Transformations</title>
+  <meta name="description" content="Explore our beauty gallery — stunning hair transformations, bridal makeup, before & after looks, and beauty art by Shivangi's Beauty Art & Hair in Nadiad." />
+  <meta name="keywords" content="beauty salon gallery Nadiad, bridal makeup gallery, hair transformation Nadiad, before after makeup" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://shivangisbeautyart.com/gallery.html" />
+  <link rel="icon" type="image/png" href="images/salon_logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    /* Gallery filter tabs */
+    .filter-tabs {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+
+    .filter-tab {
+      padding: 0.6rem 1.5rem;
+      border-radius: var(--radius-full);
+      border: 2px solid var(--clr-border);
+      background: var(--clr-white);
+      color: var(--clr-text-muted);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--t-med);
+      font-family: var(--font-sans);
+    }
+
+    .filter-tab:hover,
+    .filter-tab.active {
+      background: var(--clr-primary);
+      border-color: var(--clr-primary);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* Extended gallery grid */
+    .gallery-grid-full {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: 280px;
+      gap: 1rem;
+    }
+
+    .gallery-grid-full .gallery-item.tall   { grid-row: span 2; }
+    .gallery-grid-full .gallery-item.wide   { grid-column: span 2; }
+
+    @media (max-width: 768px) {
+      .gallery-grid-full {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 180px;
+      }
+      .gallery-grid-full .gallery-item.tall  { grid-row: span 1; }
+      .gallery-grid-full .gallery-item.wide  { grid-column: span 1; }
+    }
+
+    @media (max-width: 480px) {
+      .gallery-grid-full { grid-template-columns: 1fr; grid-auto-rows: 250px; }
+    }
+
+    /* Before/After divider */
+    .ba-divider {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 3px;
+      height: 100%;
+      background: white;
+      z-index: 2;
+    }
+
+    .ba-divider-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 36px;
+      height: 36px;
+      background: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      color: var(--clr-primary);
+      z-index: 3;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo" aria-label="Home">
+        <img src="images/salon_logo.png" alt="Shivangi's Beauty Art Logo" class="logo-img" width="48" height="48" />
+        <div class="logo-text">
+          <span class="logo-main">Shivangi's</span>
+          <span class="logo-sub">Beauty Art &amp; Hair</span>
+        </div>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html" class="active">Gallery</a></li>
+        <li><a href="testimonials.html">Reviews</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="tel:+919624354492" class="btn btn-outline btn-sm"><i class="fas fa-phone-alt"></i> Call Now</a>
+        <a href="contact.html#booking" class="btn btn-primary btn-sm"><i class="fas fa-calendar-alt"></i> Book Now</a>
+      </div>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open mobile menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="nav-mobile" id="nav-mobile">
+    <button class="nav-mobile-close" id="nav-mobile-close" aria-label="Close"><i class="fas fa-times"></i></button>
+    <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="gallery.html">Gallery</a><a href="testimonials.html">Reviews</a><a href="contact.html">Contact</a>
+    <div style="display:flex;gap:1rem;margin-top:1rem;justify-content:center;">
+      <a href="tel:+919624354492" class="btn btn-call btn-sm"><i class="fas fa-phone-alt"></i> Call</a>
+      <a href="https://wa.me/919624354492" class="btn btn-whatsapp btn-sm" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    </div>
+  </div>
+
+  <!-- PAGE HERO -->
+  <header class="page-hero" role="banner">
+    <div class="page-hero-overlay" aria-hidden="true"></div>
+    <div class="page-hero-content">
+      <div style="font-family:var(--font-script);font-size:3rem;opacity:0.9;margin-bottom:0.5rem;">Gallery</div>
+      <h1>Our Beauty Transformations</h1>
+      <p>A showcase of artistry, skill, and beauty.</p>
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="breadcrumb-sep" aria-hidden="true">›</span>
+        <span aria-current="page">Gallery</span>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN GALLERY -->
+  <section class="section bg-cream" aria-labelledby="gallery-main-heading">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="label">Portfolio</div>
+        <h2 id="gallery-main-heading">Our Work Speaks For Itself</h2>
+        <div class="divider"></div>
+        <p>Browse through our collection of beauty transformations — from hair to makeup, skin to nails.</p>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="filter-tabs" role="tablist" aria-label="Gallery filter">
+        <button class="filter-tab active" data-filter="all" role="tab" aria-selected="true" id="tab-all">All Work</button>
+        <button class="filter-tab" data-filter="bridal" role="tab" aria-selected="false" id="tab-bridal">Bridal</button>
+        <button class="filter-tab" data-filter="hair" role="tab" aria-selected="false" id="tab-hair">Hair</button>
+        <button class="filter-tab" data-filter="skin" role="tab" aria-selected="false" id="tab-skin">Skin &amp; Nails</button>
+        <button class="filter-tab" data-filter="studio" role="tab" aria-selected="false" id="tab-studio">Studio</button>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="gallery-grid-full reveal" id="main-gallery">
+        <div class="gallery-item tall" data-category="bridal">
+          <img src="images/bridal_showcase.png" alt="Gorgeous Indian bridal makeup transformation" loading="lazy" width="400" height="600" />
+          <div class="gallery-item-overlay"><span>Bridal Makeup</span></div>
+        </div>
+        <div class="gallery-item" data-category="hair">
+          <img src="images/hair_styling.png" alt="Professional hair styling and color treatment" loading="lazy" width="400" height="280" />
+          <div class="gallery-item-overlay"><span>Hair Styling &amp; Color</span></div>
+        </div>
+        <div class="gallery-item" data-category="skin">
+          <img src="images/facial_treatment.png" alt="Luxury facial and skin treatment" loading="lazy" width="400" height="280" />
+          <div class="gallery-item-overlay"><span>Facial Treatment</span></div>
+        </div>
+        <div class="gallery-item wide" data-category="studio">
+          <img src="images/salon_hero.png" alt="Shivangi's Beauty Art interior salon" loading="lazy" width="800" height="280" />
+          <div class="gallery-item-overlay"><span>Our Studio</span></div>
+        </div>
+        <div class="gallery-item tall" data-category="skin">
+          <img src="images/manicure_pedicure.png" alt="Elegant nail art and manicure" loading="lazy" width="400" height="560" />
+          <div class="gallery-item-overlay"><span>Nail Art &amp; Manicure</span></div>
+        </div>
+        <div class="gallery-item" data-category="bridal">
+          <img src="images/bridal_showcase.png" alt="Traditional Indian bridal look" loading="lazy" width="400" height="280" />
+          <div class="gallery-item-overlay"><span>Traditional Bridal</span></div>
+        </div>
+        <div class="gallery-item" data-category="hair">
+          <img src="images/hair_styling.png" alt="Hair color and highlights transformation" loading="lazy" width="400" height="280" />
+          <div class="gallery-item-overlay"><span>Hair Coloring</span></div>
+        </div>
+        <div class="gallery-item" data-category="studio">
+          <img src="images/salon_hero.png" alt="Salon ambiance and decor" loading="lazy" width="400" height="280" />
+          <div class="gallery-item-overlay"><span>Salon Ambiance</span></div>
+        </div>
+        <div class="gallery-item" data-category="skin">
+          <img src="images/facial_treatment.png" alt="Skincare and facial session" loading="lazy" width="400" height="280" />
+          <div class="gallery-item-overlay"><span>Skincare Session</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRIDAL SHOWCASE -->
+  <section class="section bg-blush" aria-labelledby="bridal-gallery-heading">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="label">Bridal Portfolio</div>
+        <h2 id="bridal-gallery-heading">Bridal Beauty Showcase</h2>
+        <div class="divider"></div>
+        <p>Creating timeless bridal looks for the most important day of your life.</p>
+      </div>
+
+      <div class="grid-3 stagger reveal" style="gap:1.5rem;" id="bridal-gallery">
+        <div class="card" style="overflow:hidden;">
+          <img src="images/bridal_showcase.png" alt="Elegant Hindu bridal makeup look" loading="lazy" style="width:100%;height:300px;object-fit:cover;" width="400" height="300" />
+          <div style="padding:1.25rem;">
+            <h4 style="margin-bottom:0.4rem;">Classic Hindu Bridal</h4>
+            <p style="font-size:0.88rem;">Traditional, vibrant, and timeless — perfect for your Hindu wedding ceremony.</p>
+          </div>
+        </div>
+        <div class="card" style="overflow:hidden;">
+          <img src="images/bridal_showcase.png" alt="Modern bridal makeup with bold eyes" loading="lazy" style="width:100%;height:300px;object-fit:cover;" width="400" height="300" />
+          <div style="padding:1.25rem;">
+            <h4 style="margin-bottom:0.4rem;">Modern Glam Bridal</h4>
+            <p style="font-size:0.88rem;">Contemporary makeup artistry with flawless foundation and dramatic eyes.</p>
+          </div>
+        </div>
+        <div class="card" style="overflow:hidden;">
+          <img src="images/bridal_showcase.png" alt="Soft and dewy bridal glow look" loading="lazy" style="width:100%;height:300px;object-fit:cover;" width="400" height="300" />
+          <div style="padding:1.25rem;">
+            <h4 style="margin-bottom:0.4rem;">Dewy Glow Bridal</h4>
+            <p style="font-size:0.88rem;">Soft, luminous, and natural-looking bridal makeup for a glowing bride.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEFORE / AFTER SECTION -->
+  <section class="section bg-cream" aria-labelledby="before-after-heading">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="label">Transformations</div>
+        <h2 id="before-after-heading">Before &amp; After</h2>
+        <div class="divider"></div>
+        <p>Witness the remarkable beauty transformations we create for our clients every day.</p>
+      </div>
+
+      <div class="before-after-grid reveal" id="before-after-grid">
+        <div class="before-after-card">
+          <div class="before-after-images" style="position:relative;">
+            <div>
+              <img src="images/hair_styling.png" alt="Before hair treatment" loading="lazy" width="200" height="300" />
+              <span class="ba-label">Before</span>
+            </div>
+            <div class="ba-divider">
+              <div class="ba-divider-icon"><i class="fas fa-arrows-alt-h"></i></div>
+            </div>
+            <div>
+              <img src="images/hair_styling.png" alt="After hair treatment with vibrant color" loading="lazy" width="200" height="300" />
+              <span class="ba-label" style="left:auto;right:0.75rem;">After</span>
+            </div>
+          </div>
+          <div class="before-after-card-info">
+            <h4>Hair Color Transformation</h4>
+            <p style="font-size:0.85rem;">From dull to dazzling — a complete hair color and spa treatment.</p>
+          </div>
+        </div>
+
+        <div class="before-after-card">
+          <div class="before-after-images" style="position:relative;">
+            <div>
+              <img src="images/facial_treatment.png" alt="Before facial treatment" loading="lazy" width="200" height="300" />
+              <span class="ba-label">Before</span>
+            </div>
+            <div class="ba-divider">
+              <div class="ba-divider-icon"><i class="fas fa-arrows-alt-h"></i></div>
+            </div>
+            <div>
+              <img src="images/facial_treatment.png" alt="After facial glow treatment" loading="lazy" width="200" height="300" />
+              <span class="ba-label" style="left:auto;right:0.75rem;">After</span>
+            </div>
+          </div>
+          <div class="before-after-card-info">
+            <h4>Skin Glow Facial</h4>
+            <p style="font-size:0.85rem;">Radiant, glowing skin after our signature deep-cleansing facial treatment.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="background:var(--grad-gold);">
+    <div class="container text-center">
+      <div class="reveal" style="color:white;">
+        <h2 style="color:white;margin-bottom:1rem;">Love What You See?</h2>
+        <p style="color:rgba(255,255,255,0.85);max-width:500px;margin:0 auto 2rem;">Book your appointment and let us create a stunning look just for you!</p>
+        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+          <a href="contact.html#booking" class="btn btn-outline btn-lg" id="gallery-book-btn"><i class="fas fa-calendar-alt"></i> Book Appointment</a>
+          <a href="https://wa.me/919624354492?text=I%20love%20your%20gallery!%20I%20want%20to%20book%20an%20appointment." class="btn btn-lg" style="background:white;color:var(--clr-gold);" target="_blank" rel="noopener" id="gallery-wa-btn"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand"><div class="logo-script">Shivangi's</div><p>Premier beauty salon in Nadiad, Gujarat.</p><div class="footer-social"><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="https://wa.me/919624354492" aria-label="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a></div></div>
+        <div class="footer-column"><h4>Quick Links</h4><nav class="footer-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="gallery.html">Gallery</a><a href="testimonials.html">Reviews</a><a href="contact.html">Contact</a></nav></div>
+        <div class="footer-column"><h4>Services</h4><nav class="footer-links"><a href="services.html#hair">Hair Styling</a><a href="services.html#makeup">Bridal Makeup</a><a href="services.html#skin">Facial &amp; Cleanup</a><a href="services.html#nail">Nail Art</a></nav></div>
+        <div class="footer-column"><h4>Contact</h4><div style="display:flex;flex-direction:column;gap:0.75rem;font-size:0.85rem;color:rgba(255,255,255,0.55);"><div><i class="fas fa-map-marker-alt" style="color:var(--clr-secondary);margin-right:0.5rem;"></i>Piplag, Nadiad, Gujarat 387001</div><div><i class="fas fa-phone-alt" style="color:var(--clr-secondary);margin-right:0.5rem;"></i><a href="tel:+919624354492" style="color:rgba(255,255,255,0.65);">+91 96243 54492</a></div></div></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2025 Shivangi's Beauty Art &amp; Hair. All rights reserved.</p><div class="footer-bottom-links"><a href="#">Privacy</a><a href="#">Terms</a><a href="contact.html">Contact</a></div></div>
+    </div>
+  </footer>
+
+  <div id="whatsapp-float">
+    <span class="whatsapp-tooltip">Chat with us!</span>
+    <a href="https://wa.me/919624354492" class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  </div>
+  <button id="back-to-top" aria-label="Back to top" style="position:fixed;bottom:7rem;right:2rem;z-index:400;width:44px;height:44px;border-radius:50%;background:var(--clr-primary);color:#fff;border:none;display:flex;align-items:center;justify-content:center;font-size:1rem;cursor:pointer;opacity:0;transition:opacity 0.3s ease;box-shadow:0 4px 16px rgba(201,132,122,0.4);"><i class="fas fa-chevron-up"></i></button>
+
+  <script src="js/main.js" defer></script>
+  <script>
+    // Gallery filter functionality
+    (function() {
+      const tabs = document.querySelectorAll('.filter-tab');
+      const items = document.querySelectorAll('#main-gallery .gallery-item');
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+          tab.classList.add('active');
+          tab.setAttribute('aria-selected', 'true');
+
+          const filter = tab.getAttribute('data-filter');
+          items.forEach(item => {
+            const cat = item.getAttribute('data-category');
+            if (filter === 'all' || cat === filter) {
+              item.style.opacity = '1';
+              item.style.transform = 'scale(1)';
+            } else {
+              item.style.opacity = '0.25';
+              item.style.transform = 'scale(0.97)';
+            }
+          });
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
